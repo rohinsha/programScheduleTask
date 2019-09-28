@@ -1,0 +1,56 @@
+h3{
+    position: relative;
+    top: 15px;
+    font-family: serif;
+}
+
+.colMargin{
+    margin:20px 0 10px;
+}
+
+.showName{
+    padding: 15px 0 15px 20px;
+    background-color: black;
+    margin: 0px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
+.showName a{
+   text-decoration: underline; 
+}
+.imageWrapper{
+    background-color: black;
+    padding: 12px 0 0;
+    width: 90%;
+    margin: 0 auto;
+}
+.imageWrapper img{
+    width: 90%;
+}
+.showCard{
+    cursor: pointer;
+}
+
+.borderRed{
+    border:1px solid red;
+}
+
+.ratingDesc{
+  
+    background-color: black;
+    font-size: 20px;
+    position: relative;
+}
+
+.heartIcon{
+    position: absolute;
+    left: 77px;
+    top: -4px;
+}
+
+.rating{
+    position: relative;
+    top: -9px;
+    left: 41px;
+}

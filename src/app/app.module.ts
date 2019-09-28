@@ -16,6 +16,7 @@ import { EpisodesComponent } from './episodes/episodes.component';
 import { CastComponent } from './cast/cast.component';
 import { CrewComponent } from './crew/crew.component';
 import { CommomNavComponent } from './commom-nav/commom-nav.component';
+import { DataGridModule } from 'primeng/datagrid';
 export function loadConfig(appService: AppService, restService: RestService) {
   return () => restService
     .get(environment.configUrl)
@@ -40,7 +41,8 @@ export function loadConfig(appService: AppService, restService: RestService) {
     AppRoutes,
     DataViewModule,
     TableModule,
-    PanelModule
+    PanelModule,
+    DataGridModule
   ],
   providers: [
     {

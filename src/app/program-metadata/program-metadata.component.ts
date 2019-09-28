@@ -15,6 +15,7 @@ export class ProgramMetadataComponent implements OnInit {
   website:string='';
   daysArr:any=[];
   episodesArr:any=[];
+  stringToRemove:string='';
   constructor(private router:Router,
     private route: ActivatedRoute,
     private programInfoService: ProgramInfoService) { }
@@ -29,11 +30,11 @@ export class ProgramMetadataComponent implements OnInit {
     
     }else{
       this.getShowMetaDataById();
-      console.log('here i am');
     }
        
    
   }
+ 
   getShowMetaDataById(){
     const plazaPromise = new Promise((resolve, reject) => {
       this.programInfoService.getShowMetaDataById(this.id).subscribe((response)=>{
@@ -52,6 +53,15 @@ export class ProgramMetadataComponent implements OnInit {
             }
             
           }
+          if(this.showMetaData.summary){
+            this.showMetaData.summary=this.showMetaData.summary.toString();
+            console.log(this.showMetaData.summary);
+            this.showMetaData.summary= this.showMetaData.summary.replace(/<[^>]*>?/gm, '');
+            }else{
+              return;
+            }
+          
+          
         
           this.daysArr=this.showMetaData.schedule.days;
           this.episodesArr=this.showMetaData._embedded.episodes;

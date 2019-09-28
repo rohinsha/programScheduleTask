@@ -1,11 +1,19 @@
 .wrapper{
     background-color: #e9e5e5;
+    padding:0 25px 0 27px;
 }
-
-
 .showImage{
     width:90%;
 }
 .p-20{
-padding:20px 0;
+    padding:20px 0;
+}
+
+.showInfo{
+    border:1px solid black;
+    padding-top: 13px;
+}
+
+.showInfo{
+    font-size: 15px;
 }

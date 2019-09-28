@@ -1,14 +1,24 @@
 <p-dataView [value]="programsArr" [paginator]="true" [rows]="12"  [lazy]="true" (onLazyLoad)="loadData($event)" [totalRecords]="totalItems" >
   <p-header>
-      <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-  </p-header>
-<ng-template let-item pTemplate="gridItem">
-
-<div class="col-sm-3 text-center"  (click)="getShowInfo($event,item.show.id)">
-{{item.show.id}}
-{{item.show.name}}
-<div><img [src]="item.show.image.medium" alt=""></div> 
-       
+    <div class="text-center">
+      <h3>SHOW SCHEDULE</h3>
     </div>
-</ng-template>
+    <div class="text-right">
+        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+    </div>
+    
+  </p-header>
+  <ng-template let-item pTemplate="gridItem">
+    <div class="col-sm-3 text-center colMargin">  
+      <div class="showCard" (click)="getShowInfo($event,item.show.id)">
+        <div class="imageWrapper"><img [src]="item.show.image.medium" alt=""></div> 
+        <p class="showName"><a>{{item.show.name}}</a></p>
+        <p class="ratingDesc"><i class="fa fa-heart heartIcon"></i> <span class="rating"><i class="fa fa-star"></i> - <span *ngIf="item.show.rating.average">{{item.show.rating.average}}</span></span></p>
+
+      </div>
+     
+      
+      
+    </div>
+  </ng-template>
 </p-dataView>
