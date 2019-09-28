@@ -1,0 +1,12 @@
+<div class="container wrapper">
+  <div class="titleBar">
+    <span>{{showMetaData.name}}</span>
+    <li class="mainMenu"><a [routerLink]="['/']">View All Shows</a></li>
+  </div>
+  <ul class="menu">
+    <li><a routerLink="/show-info/{{id}}">Main</a></li>
+    <li><a routerLink="/show-info/{{id}}/episodes">Episodes</a></li>
+    <li><a routerLink="/show-info/{{id}}/cast">Cast</a></li>
+    <li><a routerLink="/show-info/{{id}}/crew">Crew</a></li>
+  </ul>
+</div>

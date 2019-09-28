@@ -1,0 +1,6 @@
+{
+    "/shows": {
+      "target": "https://www.tvmaze.com/shows",
+      "secure": false
+    }
+  }

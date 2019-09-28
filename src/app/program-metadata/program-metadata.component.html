@@ -1,0 +1,29 @@
+<app-commom-nav></app-commom-nav>
+<div class="container wrapper">
+  <div class="row p-20">
+    <div class="col-sm-2 text-center">
+      <img *ngIf="showMetaData.image" [src]="showMetaData.image.medium" alt="Show Image" class="showImage">
+    </div>
+    <div class="col-sm-6">
+      {{showMetaData.summary}}
+    </div>
+    <div class="col-sm-4 border">
+      <h4>Show Info</h4>
+      <p *ngIf="showMetaData.network">Network: {{showMetaData.network.name}} (2019-now)</p>
+      <p *ngIf="showMetaData.schedule">Time: {{showMetaData.schedule.time}} - ({{showMetaData.runtime}}min)</p>
+      Schedule:
+      <ul *ngFor="let item of daysArr;let i=index">
+        <li>Day-{{i}} {{item}}</li>
+      </ul>
+  
+      <p *ngIf="showMetaData.status">Status: {{showMetaData.status}}</p>
+      <p *ngIf="showMetaData.type">Show Type: {{showMetaData.type}}</p>
+      Genres: <ul *ngFor="let item of showMetaData.genres;let i=index">
+        <li>{{item}}</li>
+      </ul>
+
+      <p *ngIf="episodesArr">Episodes ordered: {{episodesArr.length}}</p>
+      <p *ngIf="showMetaData.officialSite"><span>Official Website: </span><a [href]="website">{{website}}</a> </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<p-dataView [value]="programsArr" [paginator]="true" [rows]="12"  [lazy]="true" (onLazyLoad)="loadData($event)" [totalRecords]="totalItems" >
+  <p-header>
+      <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+  </p-header>
+<ng-template let-item pTemplate="gridItem">
+
+<div class="col-sm-3 text-center"  (click)="getShowInfo($event,item.show.id)">
+{{item.show.id}}
+{{item.show.name}}
+<div><img [src]="item.show.image.medium" alt=""></div> 
+       
+    </div>
+</ng-template>
+</p-dataView>
