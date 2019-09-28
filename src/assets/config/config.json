@@ -1,10 +1,10 @@
 {
     "dev": {
-        "HOST_NAME": "http://api.tvmaze.com",
+        "HOST_NAME": "https://api.tvmaze.com",
         "STATIC_APP_URL": "http://localhost:4200"
     },
     "prod": {
-        "HOST_NAME": "http://api.tvmaze.com",
+        "HOST_NAME": "https://api.tvmaze.com",
         "STATIC_APP_URL": "http://localhost:4200"
     },
     "env": "dev"
