@@ -2,6 +2,10 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/programScheduleTask'));
 app.get('/*', function(req,res) {
