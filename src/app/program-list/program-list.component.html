@@ -1,4 +1,4 @@
-<p-dataView [value]="programsArr" [paginator]="true" [rows]="12"  [lazy]="true" (onLazyLoad)="loadData($event)" [totalRecords]="totalItems" >
+<p-dataView [value]="programsArr" [paginator]="true" [rows]="12"  [lazy]="true" (onLazyLoad)="loadData($event)" [totalRecords]="totalItems" [loading]=loading>
   <p-header>
     <div class="text-center">
       <h3>SHOW SCHEDULE</h3>
