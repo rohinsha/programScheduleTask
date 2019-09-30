@@ -6,19 +6,33 @@
     <div class="text-right">
         <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
     </div>
-    
   </p-header>
+  <ng-template let-item pTemplate="listItem">
+    <div class="container">
+      <div class="row p-20 borderBottom">
+        <div class="col-sm-3">
+          <img [src]="item.show.image.medium" alt="" class="imageBorder">
+        </div>
+        <div class="col-sm-9 customPadding">
+          <h4>Name: {{item.show.name}}</h4>
+          <p *ngIf="item.show.network.name">Network: {{item.show.network.name}} (2019-now)</p>
+          <p *ngIf="item.show.schedule">Time: {{item.show.schedule.time}} - ({{item.show.runtime}}min)</p>
+          <p>Language: {{item.show.language}} (2019-now)</p>
+          <p *ngIf="item.show.officialSite">Official Site:{{item.show.officialSite}}</p>
+          <p  *ngIf="item.show.status">Status:{{item.show.status}}</p>
+          <p  *ngIf="item.show.type">Type:{{item.show.type}}</p>
+        </div>
+      </div>
+    </div>
+    
+  </ng-template>
   <ng-template let-item pTemplate="gridItem">
     <div class="col-sm-3 text-center colMargin">  
       <div class="showCard" (click)="getShowInfo($event,item.show.id)">
         <div class="imageWrapper"><img [src]="item.show.image.medium" alt=""></div> 
         <p class="showName"><a>{{item.show.name}}</a></p>
         <p class="ratingDesc"><i class="fa fa-heart heartIcon"></i> <span class="rating"><i class="fa fa-star"></i> - <span *ngIf="item.show.rating.average">{{item.show.rating.average}}</span></span></p>
-
       </div>
-     
-      
-      
     </div>
   </ng-template>
 </p-dataView>

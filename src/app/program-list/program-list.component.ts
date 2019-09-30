@@ -21,33 +21,31 @@ export class ProgramListComponent implements OnInit {
 
   ngOnInit() {
     this.programInfoService.getProgramList().subscribe((response)=>{
-      console.log(response);
       this.programResp=response;
       var uniq = {};
       this.showsArr = this.programResp.filter(obj => !uniq[obj.show.id] && (uniq[obj.show.id] = true));
-      console.log(this.showsArr);
       this.totalItems=this.showsArr.length;
-      console.log(this.totalItems);
+      if(this.showsArr.length>0){
+        this.showsArr.forEach((element)=>{
+          element.show.image.medium=element.show.image.medium.replace('http','https');
+        });
+      }
     });
   }
   loadData(event) {
-    console.log(event);
     setTimeout(() => {
       if(this.showsArr){
         if(this.showsArr.length!=0) {
           this.programsArr = this.showsArr.slice(event.first, (event.first + event.rows));
-          console.log(this.programsArr);
+          //console.log(this.programsArr);
           event.first = 0;
           event.rows = 12;
         }
       }
-  
     }, 250);
   }
 
   getShowInfo(event, showId){
-    console.log(event);
-    console.log(showId);
     localStorage.removeItem('showMetaDataObj');
     this.router.navigate(['/show-info', showId]);
   }

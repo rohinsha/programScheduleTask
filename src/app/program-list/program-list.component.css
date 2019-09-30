@@ -53,3 +53,21 @@ h3{
     top: -9px;
     left: 41px;
 }
+.p-20{
+    padding: 50px 100px;
+}
+
+.borderBottom{
+    border-bottom: 1px solid white;
+}
+.customPadding{
+   padding:0 50px 10px;
+}
+
+.customPadding h4{
+    color: #faf4ff;
+    padding-bottom: 10px;   
+}
+.imageBorder{
+    border:1px solid black;
+}
