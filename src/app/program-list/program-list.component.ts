@@ -14,13 +14,17 @@ export class ProgramListComponent implements OnInit {
   programRespArr:any;
   showsArr:any;
   totalItems:number=0;
+  loading:Boolean;
   pageNumber:any;
   constructor(
    private programInfoService: ProgramInfoService,
    private router: Router) { }
 
   ngOnInit() {
-   
+    this.getProgramList();
+    this.loading=true;
+  }
+  getProgramList(){
     this.programInfoService.getProgramList().subscribe((response)=>{
       this.programResp=response;
       var uniq = {};
@@ -34,15 +38,18 @@ export class ProgramListComponent implements OnInit {
     });
   }
   loadData(event) {
-    console.log('first');
-    console.log(this.programsArr);
+    this.loading=true;
+    // console.log('first');
+    // console.log(this.programsArr);
     setTimeout(() => {
       if(this.showsArr){
         if(this.showsArr.length>0){
+          this.loading=false;
           this.programsArr = this.showsArr.slice(event.first, (event.first + event.rows));
           //console.log(this.programsArr);
           event.first = 0;
           event.rows = 12;
+          this.loading=false;
         }
       }
     }, 250);
